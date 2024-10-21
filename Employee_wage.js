@@ -20,15 +20,21 @@ let wage = (working_hour) => {
 
 employee_status = check_attendance();
  
-if(employee_status === "Full_time"){
-    daily_wage = wage(FULL_TIME_HOURS);
-    console.log(`The employee is ${employee_status}.`);
-    console.log(`Daily Wage: ${daily_wage}`);
-}
-else if(employee_status === "Part_time"){
-    daily_wage = wage(PART_TIME_HOURS);
-    console.log(`The employee is ${employee_status}.`);
-    console.log(`Daily Wage: ${daily_wage}`);
-}else{
-    console.log(`The employee is ${employee_status}.`);
+switch(employee_status){
+    case "Full_time": 
+        daily_wage = wage(FULL_TIME_HOURS);
+        console.log(`The employee is ${employee_status}.`);
+        console.log(`Daily Wage: ${daily_wage}`);
+        break;
+    
+    case "Part_time":
+        daily_wage = wage(PART_TIME_HOURS);
+        console.log(`The employee is ${employee_status}.`);
+        console.log(`Daily Wage: ${daily_wage}`);
+        break;
+    
+    default: 
+        console.log(`The employee is ${employee_status}.`);
+        break
+    
 }
